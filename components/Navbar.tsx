@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header
       className="
@@ -18,20 +24,23 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-4">
+          <a href="#" className="flex items-center gap-3">
             <Image src="/logo.png" alt="Arsie Studio" width={55} height={55} />
 
             <div>
-              <h2 className="font-bold text-xl text-slate-900">Arsie Studio</h2>
+              <h2 className="font-bold text-lg text-slate-900">Arsie Studio</h2>
 
-              <p className="text-sm text-slate-500">Desain Arsitektur Masjid</p>
+              <p className="hidden sm:block text-xs text-slate-500">
+                Desain Arsitektur Masjid
+              </p>
             </div>
           </a>
 
-          {/* Menu */}
+          {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-10">
             <a
               href="#tentang"
+              onClick={() => setMenuOpen(false)}
               className="text-slate-700 hover:text-amber-500 transition"
             >
               Tentang
@@ -39,6 +48,7 @@ export default function Navbar() {
 
             <a
               href="#portfolio"
+              onClick={() => setMenuOpen(false)}
               className="text-slate-700 hover:text-amber-500 transition"
             >
               Portofolio
@@ -46,6 +56,7 @@ export default function Navbar() {
 
             <a
               href="#layanan"
+              onClick={() => setMenuOpen(false)}
               className="text-slate-700 hover:text-amber-500 transition"
             >
               Layanan
@@ -53,6 +64,7 @@ export default function Navbar() {
 
             <a
               href="#kontak"
+              onClick={() => setMenuOpen(false)}
               className="text-slate-700 hover:text-amber-500 transition"
             >
               Kontak
@@ -61,20 +73,97 @@ export default function Navbar() {
             <a
               href="https://wa.me/6281222016506"
               target="_blank"
+              onClick={() => setMenuOpen(false)}
               className="
-              bg-amber-500
-              text-white
-              px-6
-              py-3
-              rounded-xl
-              font-semibold
-              hover:bg-amber-600
-              transition
-              "
+  bg-amber-500
+  text-white
+  text-center
+  py-3
+  rounded-xl
+  font-semibold
+  "
             >
               Konsultasi Gratis
             </a>
           </nav>
+
+          {/* Mobile Button */}
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
+            {menuOpen ? <X size={30} /> : <Menu size={30} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`
+    md:hidden
+    overflow-hidden
+    transition-all
+    duration-300
+    ${menuOpen ? "max-h-96 pb-6" : "max-h-0"}
+  `}
+        >
+          <div className="md:hidden pb-6">
+            <div
+              className="
+  flex
+  flex-col
+  gap-5
+  bg-white
+  rounded-2xl
+  p-5
+  shadow-lg
+  mt-2
+  "
+            >
+              <a
+                href="#tentang"
+                onClick={() => setMenuOpen(false)}
+                className="text-slate-700"
+              >
+                Tentang
+              </a>
+
+              <a
+                href="#portfolio"
+                onClick={() => setMenuOpen(false)}
+                className="text-slate-700"
+              >
+                Portofolio
+              </a>
+
+              <a
+                href="#layanan"
+                onClick={() => setMenuOpen(false)}
+                className="text-slate-700"
+              >
+                Layanan
+              </a>
+
+              <a
+                href="#kontak"
+                onClick={() => setMenuOpen(false)}
+                className="text-slate-700"
+              >
+                Kontak
+              </a>
+
+              <a
+                href="https://wa.me/6281222016506"
+                target="_blank"
+                className="
+                bg-amber-500
+                text-white
+                text-center
+                py-3
+                rounded-xl
+                font-semibold
+                "
+              >
+                Konsultasi Gratis
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </header>

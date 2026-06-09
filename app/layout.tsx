@@ -13,10 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arsie Studio | Desain Arsitektur Masjid Modern",
-
+  title: "Arsie Studio | Jasa Desain Arsitektur Masjid",
   description:
-    "Arsie Studio adalah studio desain arsitektur yang berfokus pada perancangan masjid modern, visualisasi 3D, gambar kerja konstruksi, dan masterplan kawasan islami.",
+    "Konsultan desain arsitektur masjid profesional. Melayani desain masjid modern, visualisasi 3D rendering, gambar kerja konstruksi, renovasi masjid, dan masterplan kawasan islami.",
 
   keywords: [
     "desain masjid",
@@ -26,6 +25,9 @@ export const metadata: Metadata = {
     "arsitektur masjid",
     "render masjid 3D",
     "gambar kerja masjid",
+    "renovasi masjid",
+    "masterplan kawasan islami",
+    "konsultan arsitektur masjid",
   ],
 
   authors: [
@@ -36,16 +38,23 @@ export const metadata: Metadata = {
 
   creator: "Arsie Studio",
 
+  metadataBase: new URL("https://arsiestudio.vercel.app"),
+
   openGraph: {
-    title: "Arsie Studio",
-    description: "Spesialis desain arsitektur masjid modern.",
-    url: "https://arsiestudio.id",
+    title: "Arsie Studio | Spesialis Desain Arsitektur Masjid",
+    description:
+      "Desain masjid modern, visualisasi 3D, gambar kerja konstruksi, dan masterplan kawasan islami.",
+    url: "https://arsiestudio.vercel.app",
     siteName: "Arsie Studio",
     locale: "id_ID",
     type: "website",
   },
-};
 
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 export default function RootLayout({
   children,
 }: Readonly<{

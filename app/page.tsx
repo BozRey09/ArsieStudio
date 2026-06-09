@@ -7,22 +7,27 @@ import Hero from "@/components/Hero";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Stats from "@/components/Stats";
+import Testimonial from "@/components/Testimonial";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="min-h-[85vh] bg-white">
+      <main className="flex-1 bg-white">
         <Hero />
+        <Stats />
         <About />
         <Portfolio />
         <Services />
+        <Testimonial />
         <CTA />
         <Contact />
-        <Footer />
-        <WhatsAppButton />
       </main>
-    </>
+
+      <Footer />
+      <WhatsAppButton />
+    </div>
   );
 }

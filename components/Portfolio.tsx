@@ -21,19 +21,19 @@ const projects = [
     image: "/portfolio/3.png",
   },
   {
-    slug: "islamic-center-modern",
+    slug: "Masjid Kampus",
     title: "Masjid Kampus",
     location: "Yogyakarta",
     image: "/portfolio/4.png",
   },
   {
-    slug: "islamic-center-modern",
+    slug: "masjid-minimalis",
     title: "Masjid Minimalis",
     location: "Bekasi",
     image: "/portfolio/5.png",
   },
   {
-    slug: "islamic-center-modern",
+    slug: "masjid-kawasan-perumahan",
     title: "Masjid Kawasan Perumahan",
     location: "Depok",
     image: "/portfolio/6.png",
